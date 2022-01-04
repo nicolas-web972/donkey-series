@@ -1,3 +1,17 @@
-body {
-    background-color: red;
+@import "~bootstrap/scss/bootstrap";
+
+$primary-color-1: #3498db;
+$secondary-color-1: #E67E22;
+$dark-color : #34495E;
+$grey-color: #BDC3C7;
+$white-color: #FFFFFF;
+
+header {
+    .navbar {
+        background-color: $primary-color-1 !important;
+
+        a {
+            color: $white-color !important;
+        }
+    }
 }

@@ -57,6 +57,7 @@ Encore
 
     // enables Sass/SCSS support
     .enableSassLoader()
+    .enablePostCssLoader()
 
     // uncomment if you use TypeScript
     //.enableTypeScriptLoader()
@@ -73,6 +74,8 @@ Encore
 ;
 
 module.exports = Encore.getWebpackConfig();
+
+const path = require('path');
 
 Encore
 // ...
@@ -91,3 +94,12 @@ Encore
             //pattern: /\.(png|jpg|jpeg)$/
           
 })
+
+.enablePostCssLoader((options) => {
+        options.postcssOptions = {
+             // the directory where the postcss.config.js file is stored
+             config: path.resolve(__dirname, 'sub-dir', 'custom.config.js'),
+        };
+});
+
+ 
