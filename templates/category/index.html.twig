@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="container">
+		<h1 class="m-5">Toutes les catégories</h1>
+		<div class="row">
+			<div class="col-6">
+				<ul class="list-group">
+					{% for category in categories %}
+						<li class="list-group-item d-flex justify-content-between ">
+							<div>
+								{{ category.name}}
+							</div>
+							<div>
+								<a class="btn btn-primary" href="{{ path("category_show", { categoryName: category.name }) }}">Voir la fiche</a>
+							</div>
+
+						</li>
+					{% else %}
+						<li class="list-group-item">Pas de catégorie</li>
+					{% endfor %}
+				</ul>
+
+			</div>
+		</div>
+	</div>
+{% endblock %}

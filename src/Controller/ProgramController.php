@@ -8,7 +8,6 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 #[Route('/program', name: 'program_')]
-
 class ProgramController extends AbstractController
 {
     private $programRepository;
